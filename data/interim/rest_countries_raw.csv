@@ -1,0 +1,26 @@
+Country,ISO3,Region,Subregion,Population,Area,Languages,Currencies,Borders
+Abkhazia,GEO,Asia,Western Asia,244236,8665,"Abkhaz, Russian",Russian ruble,"GEO, RUS"
+Afghanistan,AFG,Asia,Southern Asia,43844000,652230,"Dari, Pashto, Turkmen",Afghan afghani,"IRN, PAK, TKM, UZB, TJK, CHN"
+Albania,ALB,Europe,Southeast Europe,2335930,28748,Albanian,Albanian lek,"MNE, GRC, MKD, UNK"
+Algeria,DZA,Africa,Northern Africa,47400000,2381741,Arabic,Algerian dinar,"TUN, LBY, NER, ESH, MRT, MLI, MAR"
+American Samoa,ASM,Oceania,Polynesia,43268,199,"English, Samoan",United States dollar,
+Andorra,AND,Europe,Southern Europe,90105,468,Catalan,Euro,"FRA, ESP"
+Angola,AGO,Africa,Middle Africa,38778554,1246700,Portuguese,Angolan kwanza,"COG, COD, ZMB, NAM"
+Anguilla,AIA,Americas,Caribbean,16010,91,English,Eastern Caribbean dollar,
+Antarctica,ATA,Antarctic,,1300,14000000,,,
+Antigua and Barbuda,ATG,Americas,Caribbean,106365,442,English,Eastern Caribbean dollar,
+Argentina,ARG,Americas,South America,46466688,2780400,"Guarani, Spanish",Argentine peso,"BOL, BRA, CHL, PRY, URY"
+Armenia,ARM,Asia,Western Asia,3103900,29743,Armenian,Armenian dram,"AZE, GEO, IRN, TUR"
+Aruba,ABW,Americas,Caribbean,110625,180,"Dutch, Papiamento",Aruban florin,
+Australia,AUS,Oceania,Australia and New Zealand,27921150,7692024,English,Australian dollar,
+Austria,AUT,Europe,Central Europe,9217573,83871,German,Euro,"CZE, DEU, HUN, ITA, LIE, SVK, SVN, CHE"
+Azerbaijan,AZE,Asia,Western Asia,10273450,86600,Azerbaijani,Azerbaijani manat,"ARM, GEO, IRN, RUS, TUR"
+Bahamas,BHS,Americas,Caribbean,398165,13943,English,"Bahamian dollar, United States dollar",
+Bahrain,BHR,Asia,Western Asia,1603260,765,Arabic,Bahraini dinar,
+Bangladesh,BGD,Asia,Southern Asia,169828911,147570,Bengali,Bangladeshi taka,"MMR, IND"
+Barbados,BRB,Americas,Caribbean,261692,430,English,Barbadian dollar,
+Belarus,BLR,Europe,Eastern Europe,9056080,207600,"Belarusian, Russian",Belarusian ruble,"LVA, LTU, POL, RUS, UKR"
+Belgium,BEL,Europe,Western Europe,11942772,30528,"German, French, Dutch",Euro,"FRA, DEU, LUX, NLD"
+Belize,BLZ,Americas,Central America,418982,22966,"Belize Kriol, English, Spanish",Belize dollar,"GTM, MEX"
+Benin,BEN,Africa,Western Africa,13551992,112622,French,West African CFA franc,"BFA, NER, NGA, TGO"
+Bermuda,BMU,Americas,languagerica,64055,54,English,Bermudian dollar,
