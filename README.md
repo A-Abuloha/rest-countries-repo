@@ -39,4 +39,4 @@
 --> The profiling report (PDF).
 
 #### ai-logs/milestone1/index.md
---> AI chats, which tool and what it helped with.
+--> AI chats, which tool and what it helped with..
