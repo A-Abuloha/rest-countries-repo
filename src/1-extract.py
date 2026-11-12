@@ -2,19 +2,19 @@ import requests
 import json
 
 def extract_data():
-    base_url = 'https://api.restcountries.com/countries/v5'
-    headers = {'Authorization': 'Bearer YOUR_KEY_HERE'}
-    
+    url = 'https://api.restcountries.com/countries/v5'
+    headers = {'Authorization': 'put your_api_key_here'}  # Replace with your
+
     all_countries = []
     offset = 0
-    more_data = True
+    has_more = True
     
     print("Fetching data from API (handling pagination)...")
     
     # Loop to request new pages until 'more' is False
-    while more_data:
-        url = f"{base_url}?offset={offset}"
-        response = requests.get(url, headers=headers)
+    while has_more:
+        params = {'offset': offset}
+        response = requests.get(url, headers=headers, params=params)
         
         if response.status_code == 200:
             data = response.json()
@@ -25,13 +25,13 @@ def extract_data():
             
             # Check the meta block to see if we need to keep looping
             meta = data.get('data', {}).get('meta', {})
-            more_data = meta.get('more', False)
-            limit = meta.get('limit', 25)
+            has_more = meta.get('more', False)
+            count = meta.get('count', 0)
             
-            print(f"Fetched {len(objects)} countries... (Total downloaded so far: {len(all_countries)})")
+            print(f"Fetched {count} countries... (Total downloaded so far: {len(all_countries)})")
             
             # Increase the offset by 25 to grab the next page on the next loop
-            offset += limit
+            offset += count
         else:
             print(f"Error fetching data. Status code: {response.status_code}")
             break

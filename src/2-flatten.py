@@ -1,12 +1,11 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
 import json
 
 with open("data/raw/rest_countries_data.json", encoding="utf-8") as file:
     raw_json = json.load(file)
 
-
-country_list = raw_json.get('data', {}).get('objects', [])
+country_list = raw_json
 parsed_data = []
 
 for country in country_list:
@@ -30,6 +29,17 @@ for country in country_list:
     borders = country.get("borders", [])
     borders_str = ", ".join(borders) if borders else np.nan
 
+    latitude = country.get("coordinates", {}).get("lat", np.nan)
+    longitude = country.get("coordinates", {}).get("lng", np.nan)
+
+    capitals = country.get("capitals") or []
+    capital = capitals[0].get("name", np.nan) if capitals else np.nan
+
+    un_member = country.get("classification", {}).get("un_member", np.nan)
+    disputed = country.get("classification", {}).get("disputed", np.nan)
+    flag = country.get("flag", {}).get("emoji", np.nan)
+    
+
     parsed_data.append({
             "Country": name,
             "ISO3": iso_code,
@@ -39,7 +49,13 @@ for country in country_list:
             "Area": area,
             "Languages": langs_str,
             "Currencies": curr_str,
-            "Borders": borders_str
+            "Borders": borders_str,
+            "Latitude": latitude,
+            "Longitude": longitude,
+            "Capital": capital,
+            "UN Member": un_member,
+            "Disputed": disputed,
+            "Flag": flag
         })
 
 df_raw = pd.DataFrame(parsed_data)
