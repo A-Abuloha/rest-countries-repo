@@ -3,7 +3,7 @@ import json
 
 def extract_data():
     url = 'https://api.restcountries.com/countries/v5'
-    headers = {'Authorization': 'put your_api_key_here'}  # Replace with your
+    headers = {'Authorization': 'hi'}  # Replace with your actual API token
 
     all_countries = []
     offset = 0

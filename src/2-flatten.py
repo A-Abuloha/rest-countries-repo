@@ -5,7 +5,7 @@ import json
 with open("data/raw/rest_countries_data.json", encoding="utf-8") as file:
     raw_json = json.load(file)
 
-country_list = raw_json
+country_list = raw_json.get("data", {}).get("objects", [])
 parsed_data = []
 
 for country in country_list:
