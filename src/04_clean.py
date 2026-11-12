@@ -30,9 +30,16 @@ df["Languages"] = df["Languages"].fillna("No official language")
 
 # Gini: genuinely unknown (never measured), so filling it with a random number would be misleading
 # ISO3: the missing data stays empty (we use Parent ISO3 so we don't have duplicates)
-# Flag: left as they are, cosmatic and not relevant for analysis
-# Parent ISO3: it is excpected to be mostly empty, because it is a support column for the ISO3 column, so it is left as is
+# Flag: left as they are, cosmetic and not relevant for analysis
+# Parent ISO3: it is expected to be mostly empty, because it is a support column for the ISO3 column, so it is left as is
 # Outliers: real values, so they are kept
+
+# Checks: the cleaned data must meet our rules
+assert len(df) == 254
+assert df["ISO3"].dropna().is_unique
+assert (df["Population"] >= 0).all()
+assert (df["Area"] > 0).all()
+assert df[["Borders", "Subregion", "Capital", "Currencies", "Languages"]].notnull().all().all()
 
 df.to_csv("data/clean/countries_clean.csv", index=False)
 print(f"Saved {len(df)} rows to {"data/clean/countries_clean.csv"}")
