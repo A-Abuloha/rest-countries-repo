@@ -7,7 +7,7 @@ URL = "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.CD"
 YEAR = "2023"
 
 GDP_RAW = "data/raw/worldbank_gdp_per_capita.csv"
-COUNTRIES = "data/interim/rest_countries_raw.csv"   # switch to data/clean/ once clean.py exists
+COUNTRIES = "data/clean/countries_clean.csv" 
 OUTPUT = "data/clean/countries_enriched.csv"
 
 
@@ -19,6 +19,8 @@ gdp = pd.DataFrame([
     {"ISO3": r["countryiso3code"], "WB_Name": r["country"]["value"], "GDP_per_capita": r["value"]}
     for r in rows
 ])
+
+gdp = gdp[gdp["ISO3"] != ""]
 
 gdp.to_csv(GDP_RAW, index=False)
 print(f"Downloaded {len(gdp)} World Bank rows")
