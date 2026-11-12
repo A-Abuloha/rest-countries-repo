@@ -1,4 +1,6 @@
 import pandas as pd
+import sys
+sys.stdout.reconfigure(encoding="utf-8")
 
 Data = "data/interim/rest_countries_raw.csv"
 
@@ -20,7 +22,7 @@ print(f"Zero values in population and area: \n{(df[["Population", "Area"]] == 0)
 
 print(f"Countries with no borders: \n{df[df["Borders"].isnull()][["Country", "Region"]]}\n")
 
-print(f"Summary statistics (Population and area): \n{df[["Population", "Area"]].describe()}")
+print(f"Summary statistics: \n{df[['Population', 'Area', 'Number of Languages', 'Number of Currencies', 'Number of Borders', 'Gini']].describe().T.to_string(float_format='{:,.1f}'.format)}")
 
 print(f"\nMean and Median:")
 for col in ["Population", "Area"]:
@@ -32,10 +34,16 @@ print(df[["Population", "Area"]].skew(), "\n")
 print(f"Countries per region: \n{df["Region"].value_counts()}\n")
 
 print(f"Duplicated rows: {df.duplicated().sum()}\n")
-print(f"Duplicated ISO3 codes:\n Count: {df.duplicated("ISO3").sum()}\n")
-duplicates = df[df.duplicated("ISO3", keep=False)]
+print(f"Duplicated ISO3 codes:\n Count: {df['ISO3'].dropna().duplicated().sum()}\n")
+duplicates = df[df["ISO3"].notna() & df.duplicated("ISO3", keep=False)]
 if len(duplicates) > 0:
     print(duplicates[["Country", "ISO3"]], "\n")
+
+print(f"Missing ISO3 codes: {df['ISO3'].isnull().sum()}")
+print(df[df["ISO3"].isnull()][["Country", "Parent ISO3"]], "\n")
+
+for col in ["Sovereign", "Dependency", "UN Member", "Disputed"]:
+    print(f"{col}: \n{df[col].value_counts()}\n")
 
 print("Outliers (IQR Method):")
 for col in ["Population", "Area"]:
