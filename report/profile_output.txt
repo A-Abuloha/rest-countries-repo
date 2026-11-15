@@ -2,10 +2,10 @@
 
           Country ISO3 Parent ISO3   Region  ... UN Member  Disputed  Gini Flag
 0        Abkhazia  NaN         GEO     Asia  ...     False      True   NaN  NaN
-1     Afghanistan  AFG         NaN     Asia  ...      True     False   NaN   ≡ƒçª≡ƒç½
-2         Albania  ALB         NaN   Europe  ...      True     False  29.4   ≡ƒçª≡ƒç▒
-3         Algeria  DZA         NaN   Africa  ...      True     False  27.6   ≡ƒç⌐≡ƒç┐
-4  American Samoa  ASM         USA  Oceania  ...     False     False   NaN   ≡ƒçª≡ƒç╕
+1     Afghanistan  AFG         NaN     Asia  ...      True     False   NaN   🇦🇫
+2         Albania  ALB         NaN   Europe  ...      True     False  29.4   🇦🇱
+3         Algeria  DZA         NaN   Africa  ...      True     False  27.6   🇩🇿
+4  American Samoa  ASM         USA  Oceania  ...     False     False   NaN   🇦🇸
 
 [5 rows x 22 columns] 
 
@@ -131,7 +131,7 @@ Countries with no borders:
 241          United States Virgin Islands   Americas
 244                               Vanuatu    Oceania
 248                     Wallis and Futuna    Oceania
-253                         ├àland Islands     Europe
+253                         Åland Islands     Europe
 
 [86 rows x 2 columns]
 
