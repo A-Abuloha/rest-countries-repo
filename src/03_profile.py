@@ -33,6 +33,11 @@ print(df[["Population", "Area"]].skew(), "\n")
 
 print(f"Countries per region: \n{df["Region"].value_counts()}\n")
 
+print(f"Countries per subregion: \n{df['Subregion'].value_counts()}\n")
+
+for col in ["Population", "Area"]:
+    print(f"Smallest 5 by {col}: \n{df.nsmallest(5, col)[['Country', col]]}\n")
+
 print(f"Duplicated rows: {df.duplicated().sum()}\n")
 print(f"Duplicated ISO3 codes:\n Count: {df['ISO3'].dropna().duplicated().sum()}\n")
 duplicates = df[df["ISO3"].notna() & df.duplicated("ISO3", keep=False)]
