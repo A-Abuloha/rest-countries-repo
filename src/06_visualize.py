@@ -15,7 +15,7 @@ lightBlue = "#A6BDDB"
 
 # Figure 1: Population Distribution by Region
 # Question: How is population spread across the regions?
-# Chart: Box plot, log scale because population goes from ~30 people to 1.4 billion
+# Chart: Box plot, log scale because population goes from around 30 people to 1.4 billion
 # Why: Shows the median, spread and outliers of each region in one chart
 populated = df[df["Population"] > 0]
 order = populated.groupby("Region")["Population"].median().sort_values(ascending=False).index
